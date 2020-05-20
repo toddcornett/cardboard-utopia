@@ -29,8 +29,9 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coverageReporters": ["json", "lcov", "html"]
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Todd Cornett <tcornett@gmail.com>",
+  "license": "TBD"
 }
