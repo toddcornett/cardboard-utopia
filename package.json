@@ -23,11 +23,11 @@
   },
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "jest --config ./jest.config.json",
+    "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "coverage": "istanbul cover ./test.js"
   },
   "jest": {
+    "testRegex": "((\\.|/*.)(spec))\\.js?$",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "coverageReporters": ["json", "lcov", "html"]
