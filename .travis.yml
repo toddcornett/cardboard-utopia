@@ -5,6 +5,11 @@ node_js:
 dist: trusty
 addons:
   chrome: stable
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=6f19c363a9bdb0758083a7cf1277d3ffa68dc31287a81641e0b6947cca8225f8
+  
 before_script:
   - yarn global add nyc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
