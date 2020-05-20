@@ -6,21 +6,15 @@ dist: trusty
 addons:
   chrome: stable
 
-env:
-  global:
-    - CC_TEST_REPORTER_ID=6f19c363a9bdb0758083a7cf1277d3ffa68dc31287a81641e0b6947cca8225f8
-  
 before_script:
-  - yarn global add nyc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - npm install codeclimate-test-reporter istanbul -g
 
 script:
   - nyc --reporter=lcov npm test
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - npm install codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info
 
 notifications:
   email: false

@@ -16,13 +16,16 @@
     "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
+    "codeclimate-test-reporter": "^0.5.1",
+    "istanbul": "^0.4.5",
     "jest": "^26.0.1",
     "nyc": "^15.0.1"
   },
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "coverage": "istanbul cover ./test.js"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
